@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c080fb"/>
+      <stop offset="100%" stop-color="#ff4fd8"/>
+    </linearGradient>
+    <linearGradient id="bookGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f493be"/>
+      <stop offset="100%" stop-color="#9f5cff"/>
+    </linearGradient>
+  </defs>
+  <!-- Corner bracket TL -->
+  <path d="M4 14 L4 4 L14 4" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Corner bracket TR -->
+  <path d="M48 14 L48 4 L38 4" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Corner bracket BL -->
+  <path d="M4 38 L4 48 L14 48" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Corner bracket BR -->
+  <path d="M48 38 L48 48 L38 48" stroke="url(#logoGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Dot top center -->
+  <circle cx="26" cy="6.5" r="1.5" fill="url(#logoGrad)"/>
+  <!-- Hexagon body -->
+  <path d="M26 10 L39 17.5 L39 32.5 L26 40 L13 32.5 L13 17.5 Z" fill="url(#bookGrad)" opacity="0.18"/>
+  <path d="M26 10 L39 17.5 L39 32.5 L26 40 L13 32.5 L13 17.5 Z" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+  <!-- House roof peak -->
+  <path d="M26 13.5 L33.5 20.5 L18.5 20.5 Z" fill="url(#logoGrad)" opacity="0.85"/>
+  <!-- House body -->
+  <rect x="20" y="20.5" width="12" height="8.5" rx="0.5" fill="url(#logoGrad)" opacity="0.7"/>
+  <!-- House window -->
+  <rect x="23.5" y="22.5" width="5" height="5" rx="0.5" fill="none" stroke="#fff" stroke-width="1.2" opacity="0.9"/>
+  <line x1="26" y1="22.5" x2="26" y2="27.5" stroke="#fff" stroke-width="0.8" opacity="0.9"/>
+  <line x1="23.5" y1="25" x2="28.5" y2="25" stroke="#fff" stroke-width="0.8" opacity="0.9"/>
+  <!-- Open book left page -->
+  <path d="M26 31 C24 30.5 19 31 18 33 L18 38 C19.5 37 23.5 36.5 26 37 Z" fill="url(#logoGrad)" opacity="0.9"/>
+  <!-- Open book right page -->
+  <path d="M26 31 C28 30.5 33 31 34 33 L34 38 C32.5 37 28.5 36.5 26 37 Z" fill="url(#bookGrad)" opacity="0.9"/>
+  <!-- Book spine center line -->
+  <line x1="26" y1="31" x2="26" y2="37" stroke="#fff" stroke-width="0.8" opacity="0.7"/>
+</svg>

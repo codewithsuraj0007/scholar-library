@@ -304,3 +304,47 @@ if (navMenuBtn && navLinks) {
     });
   });
 }
+
+// ─────────────────────────────────────────────────────────
+//  GSAP SCROLLTRIGGER ANIMATIONS
+// ─────────────────────────────────────────────────────────
+// Register ScrollTrigger
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // About Section Animations
+  const aboutLeft = document.querySelector('.about-content-left');
+  const aboutRight = document.querySelector('.about-image-right');
+
+  if (aboutLeft && aboutRight) {
+    // Left Content Animation
+    gsap.to(aboutLeft, {
+      scrollTrigger: {
+        trigger: '.premium-about-section',
+        start: 'top 75%',
+        end: 'bottom 25%',
+        toggleActions: 'play reverse play reverse',
+      },
+      x: 0,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power3.out'
+    });
+
+    // Right Image Animation
+    gsap.to(aboutRight, {
+      scrollTrigger: {
+        trigger: '.premium-about-section',
+        start: 'top 75%',
+        end: 'bottom 25%',
+        toggleActions: 'play reverse play reverse',
+      },
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      duration: 1.2,
+      delay: 0.2, // slight stagger
+      ease: 'power3.out'
+    });
+  }
+}
