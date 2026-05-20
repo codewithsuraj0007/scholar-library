@@ -347,4 +347,68 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       ease: 'power3.out'
     });
   }
+
+  // Immersive Masonry Gallery Parallax
+  const gallerySection = document.querySelector('.parallax-gallery-section');
+  if (gallerySection) {
+    
+  // Background Glow Parallax
+    gsap.to('.glow-cyan', {
+      y: 200,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: gallerySection,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2
+      }
+    });
+
+    gsap.to('.glow-orange', {
+      y: -200,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: gallerySection,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 2
+      }
+    });
+
+    // Fade-in Header
+    gsap.from('.gallery-header-glass', {
+      scrollTrigger: {
+        trigger: gallerySection,
+        start: 'top 80%',
+        toggleActions: 'play reverse play reverse'
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    // Foreground Parallax for Floating Glass Panels
+    gsap.to('.left-panel', {
+      y: -250,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: gallerySection,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.2
+      }
+    });
+
+    gsap.to('.right-panel', {
+      y: 150,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: gallerySection,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.5
+      }
+    });
+  }
 }
