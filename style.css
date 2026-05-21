@@ -533,7 +533,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 1200px;
+    max-width: 1296px;
+    /* Increased by 8% from 1200px */
     z-index: 1000;
 
     background: rgba(10, 10, 15, 0.75);
@@ -541,7 +542,8 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 100px;
-    padding: 0.8rem 2.2rem;
+    padding: 0.74rem 2.2rem;
+    /* Decreased vertical padding to reduce height by 8% */
 
     display: flex;
     align-items: center;
@@ -707,7 +709,7 @@ body.light-mode .subheading {
 }
 
 body.light-mode .nav-bar {
-    background: rgba(255, 248, 235, 0.85);
+    background: rgb(228, 241, 255);
     /* Light glassmorphism matching screenshots! */
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow:
@@ -782,7 +784,7 @@ body.light-mode .moon-icon {
 
 .nav-links a {
     font-weight: 600 !important;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 /* Hamburger Mobile Button */
@@ -3167,5 +3169,116 @@ body.light-mode .badge-text {
     .focus-board-quote {
         display: none !important;
         /* Hide quote block to save height */
+    }
+}
+
+.nav-links {
+    gap: 1.8rem;
+}
+
+.nav-links a {
+    font-size: 1rem !important;
+    font-weight: 400;
+    color: rgb(220, 211, 211);
+}
+
+/* ─── FLOATING CONTACT ACTIONS ─────────────────────────── */
+.floating-contact-wrap {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.floating-contact-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    border: none;
+}
+
+/* WhatsApp Styling */
+.floating-contact-btn.btn-whatsapp {
+    background: #25D366;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+.floating-contact-btn.btn-whatsapp:hover {
+    background: #20ba5a;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* Call Styling */
+.floating-contact-btn.btn-call {
+    background: #ef4444;
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+}
+
+.floating-contact-btn.btn-call:hover {
+    background: #dc2626;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.5);
+}
+
+/* SVGs inside the buttons */
+.floating-contact-btn .contact-svg {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.floating-contact-btn:hover .contact-svg {
+    transform: rotate(8deg);
+}
+
+/* Tablet Screens (e.g., iPads, foldables) */
+@media (max-width: 1024px) {
+    .floating-contact-wrap {
+        bottom: 20px;
+        right: 20px;
+        gap: 8px;
+    }
+
+    .floating-contact-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .floating-contact-btn .contact-svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Mobile Screens (e.g., standard smartphones) */
+@media (max-width: 480px) {
+    .floating-contact-wrap {
+        bottom: 16px;
+        right: 16px;
+        gap: 8px;
+    }
+
+    .floating-contact-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .floating-contact-btn .contact-svg {
+        width: 18px;
+        height: 18px;
     }
 }
