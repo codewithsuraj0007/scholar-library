@@ -53,6 +53,9 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
+    integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -206,7 +209,7 @@
   </section>
 
   <!-- ─── ABOUT / WHY CHOOSE US ────────────────────────── -->
-  <section id="about-section" class="premium-about-section">
+  <section id="about-section" class="mt-5 premium-about-section">
     <!-- Animated background elements -->
     <div class="about-bg-elements">
       <div class="glow-orb orb-1"></div>
@@ -281,6 +284,308 @@
     </div>
   </section>
 
+  <!-- ─── WHY STUDENTS CHOOSE US (Cinematic Sticky-Scroll) ─── -->
+  <section id="why-choose-section" class="why-choose-section">
+    <div class="why-choose-container">
+
+      <!-- LEFT SIDE: Sticky Storytelling & Dynamic Focus Board -->
+      <div class="why-choose-left-sticky">
+        <span class="section-tag glow-tag">The Flow State</span>
+        <h2 class="why-choose-sticky-heading">Why Serious Minds Choose Scholar's Library</h2>
+
+        <!-- Animated Progress Tracker -->
+        <div class="choose-progress-tracker">
+          <div class="progress-line-track">
+            <div class="progress-line-fill"></div>
+          </div>
+          <ul class="progress-steps-list">
+            <li class="progress-step active" data-scene="0">
+              <span class="step-num">01</span>
+              <span class="step-text">Silent Flow</span>
+            </li>
+            <li class="progress-step" data-scene="1">
+              <span class="step-num">02</span>
+              <span class="step-text">Airflow Comfort</span>
+            </li>
+            <li class="progress-step" data-scene="2">
+              <span class="step-num">03</span>
+              <span class="step-text">Peer Drive</span>
+            </li>
+            <li class="progress-step" data-scene="3">
+              <span class="step-num">04</span>
+              <span class="step-text">Gigabit Speed</span>
+            </li>
+            <li class="progress-step" data-scene="4">
+              <span class="step-num">05</span>
+              <span class="step-text">Safe Harbor</span>
+            </li>
+            <li class="progress-step" data-scene="5">
+              <span class="step-num">06</span>
+              <span class="step-text">Private Sanctuary</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Dynamic Focus Meter Board -->
+        <div class="focus-board-glass">
+          <!-- Premium Tech Aesthetics Corner Brackets -->
+          <div class="board-corner corner-tl"></div>
+          <div class="board-corner corner-tr"></div>
+          <div class="board-corner corner-bl"></div>
+          <div class="board-corner corner-br"></div>
+
+          <div class="blueprint-grid-header">
+            <span class="geo-coord">COORD: [26.885°N, 80.995°E]</span>
+            <span class="system-time">DIAGNOSTIC LOCK ACTIVE</span>
+          </div>
+
+          <div class="focus-board-header">
+            <div class="board-indicator-dot animate-pulse"></div>
+            <span class="board-title">COGNITIVE FLOW CONTROL</span>
+          </div>
+
+          <div class="focus-metrics-row">
+            <!-- Focus Meter -->
+            <div class="focus-meter-wrapper">
+              <div class="outer-gauge-ticks"></div>
+              <svg viewBox="0 0 100 100" class="circular-meter">
+                <circle class="meter-bg" cx="50" cy="50" r="40" />
+                <circle class="meter-fill" cx="50" cy="50" r="40" />
+              </svg>
+              <div class="meter-text">
+                <span class="meter-val" id="focus-percentage-val">98%</span>
+                <span class="meter-lbl">Focus</span>
+              </div>
+            </div>
+
+            <!-- Stats Counters -->
+            <div class="stats-counters-column">
+              <div class="mini-stat-card">
+                <span class="stat-number" id="study-hours-val">+4.2h</span>
+                <span class="stat-label">Daily study sprint</span>
+              </div>
+              <div class="mini-stat-card">
+                <span class="stat-number" id="distraction-val">-92%</span>
+
+                <span class="stat-label">Distraction floor</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Sliders Group -->
+          <div class="cognitive-sliders-group">
+            <div class="slider-widget">
+              <div class="slider-header">
+                <span>Acoustic Isolation</span>
+                <span class="slider-val" id="acoustic-val">98%</span>
+              </div>
+              <div class="slider-track-wrap">
+                <div class="slider-track-fill" id="acoustic-fill" style="width: 98%;"></div>
+              </div>
+            </div>
+            <div class="slider-widget">
+              <div class="slider-header">
+                <span>Thermal Stability</span>
+                <span class="slider-val" id="thermal-val">22°C</span>
+              </div>
+              <div class="slider-track-wrap">
+                <div class="slider-track-fill" id="thermal-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Concentration Chart -->
+          <div class="concentration-chart-wrapper">
+            <div class="chart-header">
+              <span class="chart-title">Concentration Waveform</span>
+              <span class="chart-status" id="chart-status-val">Deep Flow</span>
+            </div>
+            <!-- Glow Filters for SVG Chart -->
+            <svg class="concentration-svg" viewBox="0 0 240 80">
+              <defs>
+                <linearGradient id="chartGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="var(--neon-pink)" />
+                  <stop offset="100%" stop-color="var(--neon-purple)" />
+                </linearGradient>
+                <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <!-- Morphing Path -->
+              <path class="chart-path" d="M 0,40 Q 20,20 40,40 T 80,40 T 120,40 T 160,40 T 200,40 T 240,40" fill="none"
+                stroke="url(#chartGrad)" stroke-width="3" filter="url(#glow)" />
+              <path class="chart-path-fill"
+                d="M 0,40 Q 20,20 40,40 T 80,40 T 120,40 T 160,40 T 200,40 T 240,40 L 240,80 L 0,80 Z"
+                fill="url(#chartGrad)" opacity="0.08" />
+            </svg>
+          </div>
+
+          <!-- Workspace Telemetry Console -->
+          <div class="live-telemetry-console">
+            <div class="console-header">
+              <span class="console-title">✦ WORKSPACE TELEMETRY LOG</span>
+              <span class="console-status-blink">LIVE</span>
+            </div>
+            <div class="console-log-wrapper">
+              <ul class="console-log-list" id="console-logs">
+                <li class="log-entry active" data-index="0">> [FLOW_STAT_01] Ambient sound isolated at 28dB. Restrictive
+                  silent protocol engaged.</li>
+                <li class="log-entry" data-index="1">> [CLIMATE_02] Dual zone cooling locked at 22°C. Zero draft
+                  ventilation running.</li>
+                <li class="log-entry" data-index="2">> [DISCIPLINE_03] 100% capacity peer flow synergy. Active focus
+                  field matching.</li>
+                <li class="log-entry" data-index="3">> [NET_GIGABIT_04] WiFi 6E canopy verified. Gigabit downlinks
+                  online. 0.0% jitter.</li>
+                <li class="log-entry" data-index="4">> [TRUST_LOCK_05] HD security loop synchronized. Personal
+                  electronic locker locked.</li>
+                <li class="log-entry" data-index="5">> [CABIN_SANCT_06] Privacy dividers active. Ambient soft LEDs
+                  calibrated.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Dynamic Quote -->
+          <p class="focus-board-quote" id="dynamic-quote-text">"The silence is almost tactile—letting your mind fully
+            submerge in the task at hand without external friction."</p>
+
+          <!-- Book Seat Call to Action -->
+          <a href="#pricing-section" class="nav-cta-btn choose-cta-btn">Reserve Your Session</a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: Large Viewport Cinematic Scenes -->
+      <div class="why-choose-right-scroll">
+
+        <!-- SCENE A: SILENT ENVIRONMENT -->
+        <div class="scroll-scene" id="scene-silent" data-index="0">
+          <div class="scene-bg-wrap">
+            <img src="./images/Masonry_Grid/Students_studying_in_library_202605201826.jpeg"
+              alt="Silent Study Room Lucknow" class="scene-bg-img">
+            <div class="scene-overlay-glow"></div>
+          </div>
+          <div class="glass-content-card">
+            <div class="card-glow-reflection"></div>
+            <span class="card-tag">✦ Environment</span>
+            <h3>Absolute Tactile Silence</h3>
+            <p>Engineered to eliminate acoustic friction. While homes echo with noise and general libraries rustle, here
+              a strict silent protocol ensures your mind settles into deep work instantly.</p>
+            <div class="floating-scene-badge">
+              <span class="pulse-ring"></span>
+              <span class="badge-text">Distraction Free Zone</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCENE B: AC COMFORT EXPERIENCE -->
+        <div class="scroll-scene" id="scene-comfort" data-index="1">
+          <div class="scene-bg-wrap">
+            <img src="./images/Masonry_Grid/Study_library_with_LED_lights_202605201826.jpeg"
+              alt="AC Comfort Study Space" class="scene-bg-img">
+            <div class="scene-overlay-glow"></div>
+          </div>
+          <div class="glass-content-card">
+            <div class="card-glow-reflection"></div>
+            <span class="card-tag">✦ Climate</span>
+            <h3>Microclimate Calibration</h3>
+            <p>Study for 12+ hours straight without physical fatigue. Climate-controlled cooling, draft-free
+              ventilation, and custom ambient lighting are tuned to prevent drowsiness and keep cognitive stamina high.
+            </p>
+            <div class="floating-scene-badge">
+              <span class="pulse-ring"></span>
+              <span class="badge-text">Optimized Temperature</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCENE C: PRODUCTIVE STUDY CULTURE -->
+        <div class="scroll-scene" id="scene-culture" data-index="2">
+          <div class="scene-bg-wrap">
+            <img src="./images/Masonry_Grid/Students_preparing_for_exams_lib…_202605201827.jpeg"
+              alt="Discipline Study Environment" class="scene-bg-img">
+            <div class="scene-overlay-glow"></div>
+          </div>
+          <div class="glass-content-card">
+            <div class="card-glow-reflection"></div>
+            <span class="card-tag">✦ Psychology</span>
+            <h3>Collective Discipline</h3>
+            <p>Surround yourself with serious minds studying for civil services, medicine, engineering, and tech
+              careers. The infectious energy of peers pushing their limits keeps you accountable and motivated.</p>
+            <div class="floating-scene-badge">
+              <span class="pulse-ring"></span>
+              <span class="badge-text">High-Focus Peer Drive</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCENE D: HIGH-SPEED WIFI + MODERN SETUP -->
+        <div class="scroll-scene" id="scene-setup" data-index="3">
+          <div class="scene-bg-wrap">
+            <img src="./images/Masonry_Grid/Futuristic_study_space_digital_c…_202605201827.jpeg"
+              alt="High speed internet study cabins" class="scene-bg-img">
+            <div class="scene-overlay-glow"></div>
+          </div>
+          <div class="glass-content-card">
+            <div class="card-glow-reflection"></div>
+            <span class="card-tag">✦ Infrastructure</span>
+            <h3>Gigabit Digital Canopy</h3>
+            <p>Access online lectures, cloud resources, and research instantly. With multi-lane ultra high-speed Wi-Fi,
+              individual multi-socket charging ports, and stable backups, your workflow remains seamless.</p>
+            <div class="floating-scene-badge">
+              <span class="pulse-ring"></span>
+              <span class="badge-text">Wi-Fi 6E Gigabit Network</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCENE E: SECURITY + SAFE ENVIRONMENT -->
+        <div class="scroll-scene" id="scene-security" data-index="4">
+          <div class="scene-bg-wrap">
+            <img src="./images/Masonry_Grid/Girls_study_area_library_202605201827.jpeg" alt="Safe Study Space Lucknow"
+              class="scene-bg-img">
+            <div class="scene-overlay-glow"></div>
+          </div>
+          <div class="glass-content-card">
+            <div class="card-glow-reflection"></div>
+            <span class="card-tag">✦ Trust</span>
+            <h3>Safe & Secure Harbor</h3>
+            <p>Study late shifts or overnight with complete peace of mind. Full security access control, continuous CCTV
+              coverage, dedicated personal lockers, and helpful staff let you focus entirely on your notes.</p>
+            <div class="floating-scene-badge">
+              <span class="pulse-ring"></span>
+              <span class="badge-text">24/7 Security Coverage</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCENE F: PREMIUM STUDY CABINS -->
+        <div class="scroll-scene" id="scene-cabins" data-index="5">
+          <div class="scene-bg-wrap">
+            <img src="./images/Masonry_Grid/Study_library_hall_modern_interiors_202605201826.jpeg"
+              alt="Premium Study Cabins Lucknow" class="scene-bg-img">
+            <div class="scene-overlay-glow"></div>
+          </div>
+          <div class="glass-content-card">
+            <div class="card-glow-reflection"></div>
+            <span class="card-tag">✦ Sanctuary</span>
+            <h3>Private Focus Cabins</h3>
+            <p>Your private workstation inside the collective workspace. Ergonomic design, partition panels for total
+              visual privacy, and large desks create a personal cocoon for absolute intellectual flow.</p>
+            <div class="floating-scene-badge">
+              <span class="pulse-ring"></span>
+              <span class="badge-text">Premium Study Cabin</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- ─── CINEMATIC GALLERY SECTION ────────────────────── -->
   <section id="cinematic-gallery-section" class="parallax-gallery-section">
     <!-- Cinematic Background glow -->
@@ -289,35 +594,44 @@
       <div class="glow-orange"></div>
       <div class="gallery-fog"></div>
     </div>
-    
+
     <div class="gallery-header-glass">
       <h2 class="gallery-title">Immersive Study Ecosystem</h2>
-      <p class="gallery-subtitle">A luxury educational environment designed to amplify your focus, engineered for absolute deep work and collaborative success.</p>
+      <p class="gallery-subtitle">A luxury educational environment designed to amplify your focus, engineered for
+        absolute deep work and collaborative success.</p>
     </div>
 
     <!-- Edge-to-edge Masonry Container -->
     <div class="parallax-masonry-wrapper">
-      
+
       <!-- Left Column (Infinite Up) -->
       <div class="masonry-col col-left">
         <div class="marquee-track track-up-slow">
           <div class="marquee-group">
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Futuristic_study_library_interior_202605201826.jpeg" alt="Futuristic Interior"></div>
+            <div class="masonry-item tall"><img
+                src="./images/Masonry_Grid/Futuristic_study_library_interior_202605201826.jpeg"
+                alt="Futuristic Interior"></div>
             <div class="masonry-item glass-ui-card square">
-               <h4>Deep Focus Protocol</h4>
-               <p>Engineered silence and ambient lighting calibrated for peak neuro-performance.</p>
+              <h4>Deep Focus Protocol</h4>
+              <p>Engineered silence and ambient lighting calibrated for peak neuro-performance.</p>
             </div>
-            <div class="masonry-item wide"><img src="./images/Masonry_Grid/Study_desk_with_laptop_books_202605201828.jpeg" alt="Study Desk"></div>
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Students_studying_in_study_hall_202605201826.jpeg" alt="Study Hall"></div>
+            <div class="masonry-item wide"><img
+                src="./images/Masonry_Grid/Study_desk_with_laptop_books_202605201828.jpeg" alt="Study Desk"></div>
+            <div class="masonry-item tall"><img
+                src="./images/Masonry_Grid/Students_studying_in_study_hall_202605201826.jpeg" alt="Study Hall"></div>
           </div>
           <div class="marquee-group">
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Futuristic_study_library_interior_202605201826.jpeg" alt="Futuristic Interior"></div>
+            <div class="masonry-item tall"><img
+                src="./images/Masonry_Grid/Futuristic_study_library_interior_202605201826.jpeg"
+                alt="Futuristic Interior"></div>
             <div class="masonry-item glass-ui-card square">
-               <h4>Deep Focus Protocol</h4>
-               <p>Engineered silence and ambient lighting calibrated for peak neuro-performance.</p>
+              <h4>Deep Focus Protocol</h4>
+              <p>Engineered silence and ambient lighting calibrated for peak neuro-performance.</p>
             </div>
-            <div class="masonry-item wide"><img src="./images/Masonry_Grid/Study_desk_with_laptop_books_202605201828.jpeg" alt="Study Desk"></div>
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Students_studying_in_study_hall_202605201826.jpeg" alt="Study Hall"></div>
+            <div class="masonry-item wide"><img
+                src="./images/Masonry_Grid/Study_desk_with_laptop_books_202605201828.jpeg" alt="Study Desk"></div>
+            <div class="masonry-item tall"><img
+                src="./images/Masonry_Grid/Students_studying_in_study_hall_202605201826.jpeg" alt="Study Hall"></div>
           </div>
         </div>
       </div>
@@ -326,24 +640,30 @@
       <div class="masonry-col col-center">
         <div class="marquee-track track-down">
           <div class="marquee-group">
-            <div class="masonry-item wide"><img src="./images/Masonry_Grid/Study_library_with_LED_lights_202605201826.jpeg" alt="LED Lights"></div>
-            <div class="masonry-item ultra-tall"><img src="./images/Masonry_Grid/Students_discussing_ideas_around…_202605201827.jpeg" alt="Discussion"></div>
+            <div class="masonry-item wide"><img
+                src="./images/Masonry_Grid/Study_library_with_LED_lights_202605201826.jpeg" alt="LED Lights"></div>
+            <div class="masonry-item ultra-tall"><img
+                src="./images/Masonry_Grid/Students_discussing_ideas_around…_202605201827.jpeg" alt="Discussion"></div>
             <div class="masonry-item glass-ui-card center-card square">
-               <div class="glowing-border"></div>
-               <h4>Premium Ergonomics</h4>
-               <p>Luxury seating systems designed for absolute physical support during 12+ hour sprint sessions.</p>
+              <div class="glowing-border"></div>
+              <h4>Premium Ergonomics</h4>
+              <p>Luxury seating systems designed for absolute physical support during 12+ hour sprint sessions.</p>
             </div>
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Chairs_and_desks_in_library_202605201827.jpeg" alt="Chairs and Desks"></div>
+            <div class="masonry-item tall"><img
+                src="./images/Masonry_Grid/Chairs_and_desks_in_library_202605201827.jpeg" alt="Chairs and Desks"></div>
           </div>
           <div class="marquee-group">
-            <div class="masonry-item wide"><img src="./images/Masonry_Grid/Study_library_with_LED_lights_202605201826.jpeg" alt="LED Lights"></div>
-            <div class="masonry-item ultra-tall"><img src="./images/Masonry_Grid/Students_discussing_ideas_around…_202605201827.jpeg" alt="Discussion"></div>
+            <div class="masonry-item wide"><img
+                src="./images/Masonry_Grid/Study_library_with_LED_lights_202605201826.jpeg" alt="LED Lights"></div>
+            <div class="masonry-item ultra-tall"><img
+                src="./images/Masonry_Grid/Students_discussing_ideas_around…_202605201827.jpeg" alt="Discussion"></div>
             <div class="masonry-item glass-ui-card center-card square">
-               <div class="glowing-border"></div>
-               <h4>Premium Ergonomics</h4>
-               <p>Luxury seating systems designed for absolute physical support during 12+ hour sprint sessions.</p>
+              <div class="glowing-border"></div>
+              <h4>Premium Ergonomics</h4>
+              <p>Luxury seating systems designed for absolute physical support during 12+ hour sprint sessions.</p>
             </div>
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Chairs_and_desks_in_library_202605201827.jpeg" alt="Chairs and Desks"></div>
+            <div class="masonry-item tall"><img
+                src="./images/Masonry_Grid/Chairs_and_desks_in_library_202605201827.jpeg" alt="Chairs and Desks"></div>
           </div>
         </div>
       </div>
@@ -352,44 +672,54 @@
       <div class="masonry-col col-right">
         <div class="marquee-track track-up-fast">
           <div class="marquee-group">
-            <div class="masonry-item square"><img src="./images/Masonry_Grid/Futuristic_study_space_digital_c…_202605201827.jpeg" alt="Digital Space"></div>
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Girls_study_area_library_202605201827.jpeg" alt="Study Area"></div>
-            <div class="masonry-item glass-ui-card wide">
-               <h4>Ambient Architecture</h4>
-               <p>Architectural spatial design that breathes productivity.</p>
+            <div class="masonry-item square"><img
+                src="./images/Masonry_Grid/Futuristic_study_space_digital_c…_202605201827.jpeg" alt="Digital Space">
             </div>
-            <div class="masonry-item ultra-tall"><img src="./images/Masonry_Grid/Floating_glassmorphism_geometric…_202605201828.jpeg" alt="Glassmorphism"></div>
+            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Girls_study_area_library_202605201827.jpeg"
+                alt="Study Area"></div>
+            <div class="masonry-item glass-ui-card wide">
+              <h4>Ambient Architecture</h4>
+              <p>Architectural spatial design that breathes productivity.</p>
+            </div>
+            <div class="masonry-item ultra-tall"><img
+                src="./images/Masonry_Grid/Floating_glassmorphism_geometric…_202605201828.jpeg" alt="Glassmorphism">
+            </div>
           </div>
           <div class="marquee-group">
-            <div class="masonry-item square"><img src="./images/Masonry_Grid/Futuristic_study_space_digital_c…_202605201827.jpeg" alt="Digital Space"></div>
-            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Girls_study_area_library_202605201827.jpeg" alt="Study Area"></div>
-            <div class="masonry-item glass-ui-card wide">
-               <h4>Ambient Architecture</h4>
-               <p>Architectural spatial design that breathes productivity.</p>
+            <div class="masonry-item square"><img
+                src="./images/Masonry_Grid/Futuristic_study_space_digital_c…_202605201827.jpeg" alt="Digital Space">
             </div>
-            <div class="masonry-item ultra-tall"><img src="./images/Masonry_Grid/Floating_glassmorphism_geometric…_202605201828.jpeg" alt="Glassmorphism"></div>
+            <div class="masonry-item tall"><img src="./images/Masonry_Grid/Girls_study_area_library_202605201827.jpeg"
+                alt="Study Area"></div>
+            <div class="masonry-item glass-ui-card wide">
+              <h4>Ambient Architecture</h4>
+              <p>Architectural spatial design that breathes productivity.</p>
+            </div>
+            <div class="masonry-item ultra-tall"><img
+                src="./images/Masonry_Grid/Floating_glassmorphism_geometric…_202605201828.jpeg" alt="Glassmorphism">
+            </div>
           </div>
         </div>
       </div>
 
     </div>
-    
+
     <!-- Floating Foreground Elements -->
     <div class="floating-foreground">
-       <div class="float-glass-panel left-panel">
-         <span class="icon">✦</span>
-         <div>
-           <div class="panel-title">Ultra-High Speed</div>
-           <div class="panel-desc">Seamless Wi-Fi 6E Network</div>
-         </div>
-       </div>
-       <div class="float-glass-panel right-panel">
-         <span class="icon">✧</span>
-         <div>
-           <div class="panel-title">Climate Control</div>
-           <div class="panel-desc">Adaptive AC Systems</div>
-         </div>
-       </div>
+      <div class="float-glass-panel left-panel">
+        <span class="icon">✦</span>
+        <div>
+          <div class="panel-title">Ultra-High Speed</div>
+          <div class="panel-desc">Seamless Wi-Fi 6E Network</div>
+        </div>
+      </div>
+      <div class="float-glass-panel right-panel">
+        <span class="icon">✧</span>
+        <div>
+          <div class="panel-title">Climate Control</div>
+          <div class="panel-desc">Adaptive AC Systems</div>
+        </div>
+      </div>
     </div>
   </section>
 

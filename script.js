@@ -411,4 +411,333 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       }
     });
   }
+
+  // ─────────────────────────────────────────────────────────
+  //  WHY CHOOSE US — STICKY SCROLL STORYTELLING
+  // ─────────────────────────────────────────────────────────
+  const scenes = gsap.utils.toArray('.scroll-scene');
+  const progressSteps = gsap.utils.toArray('.progress-step');
+  const progressFill = document.querySelector('.progress-line-fill');
+  
+  // Data definitions for morphing elements per scene
+  const sceneData = [
+    {
+      focus: 98,
+      hours: "+4.2h",
+      distraction: "-92%",
+      chartPath: "M 0,40 Q 20,10 40,40 T 80,40 T 120,30 T 160,40 T 200,20 T 240,40",
+      chartPathFill: "M 0,40 Q 20,10 40,40 T 80,40 T 120,30 T 160,40 T 200,20 T 240,40 L 240,80 L 0,80 Z",
+      status: "Flow State",
+      quote: '"The silence is almost tactile—letting your mind fully submerge in the task at hand without external friction."',
+      acoustic: 98,
+      thermal: "22°C",
+      thermalFill: 85
+    },
+    {
+      focus: 95,
+      hours: "+5.8h",
+      distraction: "-85%",
+      chartPath: "M 0,25 Q 30,25 60,25 T 120,25 T 180,25 T 240,25",
+      chartPathFill: "M 0,25 Q 30,25 60,25 T 120,25 T 180,25 T 240,25 L 240,80 L 0,80 Z",
+      status: "Cognitive Stamina",
+      quote: '"AC climate control combined with premium ergonomic cabins means you study 12 hours straight and leave feeling as fresh as you arrived."',
+      acoustic: 92,
+      thermal: "21°C",
+      thermalFill: 90
+    },
+    {
+      focus: 97,
+      hours: "+6.5h",
+      distraction: "-89%",
+      chartPath: "M 0,60 Q 30,50 60,40 T 120,25 T 180,15 T 240,10",
+      chartPathFill: "M 0,60 Q 30,50 60,40 T 120,25 T 180,15 T 240,10 L 240,80 L 0,80 Z",
+      status: "Peer Synergy",
+      quote: '"Looking left and right, you see students preparing for civil services, software builds, and exams. You feel a quiet duty to match their rigor."',
+      acoustic: 90,
+      thermal: "22°C",
+      thermalFill: 85
+    },
+    {
+      focus: 99,
+      hours: "+7.2h",
+      distraction: "-96%",
+      chartPath: "M 0,40 L 20,20 L 40,50 L 60,10 L 80,45 L 100,15 L 120,35 L 140,5 L 160,40 L 180,20 L 200,45 L 220,10 L 240,30",
+      chartPathFill: "M 0,40 L 20,20 L 40,50 L 60,10 L 80,45 L 100,15 L 120,35 L 140,5 L 160,40 L 180,20 L 200,45 L 220,10 L 240,30 L 240,80 L 0,80 Z",
+      status: "Gigabit Canopy",
+      quote: '"Zero-buffering video lectures and instant downloads. The high-speed internet keeps you in sync with the digital pulse without micro-delays."',
+      acoustic: 94,
+      thermal: "22°C",
+      thermalFill: 85
+    },
+    {
+      focus: 96,
+      hours: "+8.0h",
+      distraction: "-94%",
+      chartPath: "M 0,35 Q 40,30 80,35 T 160,35 T 240,35",
+      chartPathFill: "M 0,35 Q 40,30 80,35 T 160,35 T 240,35 L 240,80 L 0,80 Z",
+      status: "Secure Sanctuary",
+      quote: '"Safety is a given. With 24/7 CCTV security, biometric logs, and heavy personal lockers, you only focus on what is inside your head."',
+      acoustic: 95,
+      thermal: "22°C",
+      thermalFill: 85
+    },
+    {
+      focus: 98,
+      hours: "+9.2h",
+      distraction: "-98%",
+      chartPath: "M 0,20 Q 30,10 60,20 T 120,10 T 180,20 T 240,10",
+      chartPathFill: "M 0,20 Q 30,10 60,20 T 120,10 T 180,20 T 240,10 L 240,80 L 0,80 Z",
+      status: "Deep Sanctuary Flow",
+      quote: '"Ergonomic partitions block visual glare completely. It is just your desk, your notes, and your massive goals. The ultimate self-study capsule."',
+      acoustic: 99,
+      thermal: "22°C",
+      thermalFill: 85
+    }
+  ];
+
+  // DOM Elements references
+  const focusPercentVal  = document.getElementById('focus-percentage-val');
+  const studyHoursVal     = document.getElementById('study-hours-val');
+  const distractionVal    = document.getElementById('distraction-val');
+  const chartStatusVal    = document.getElementById('chart-status-val');
+  const dynamicQuoteText  = document.getElementById('dynamic-quote-text');
+  const circularMeterFill = document.querySelector('.meter-fill');
+  const chartPath         = document.querySelector('.chart-path');
+  const chartPathFill     = document.querySelector('.chart-path-fill');
+  const acousticVal       = document.getElementById('acoustic-val');
+  const acousticFill      = document.getElementById('acoustic-fill');
+  const thermalVal        = document.getElementById('thermal-val');
+  const thermalFill       = document.getElementById('thermal-fill');
+  const consoleLogs       = document.getElementById('console-logs');
+
+  function updateStickyBoard(index) {
+    const data = sceneData[index];
+    if (!data) return;
+
+    // 1. Update progress steps list
+    progressSteps.forEach((step, i) => {
+      if (i === index) {
+        step.classList.add('active');
+      } else {
+        step.classList.remove('active');
+      }
+    });
+
+    // 2. Vertical progress track line height is handled smoothly by GSAP ScrollTrigger scrub
+
+    // 3. Stats counters count up transition
+    if (focusPercentVal) {
+      gsap.to(focusPercentVal, {
+        innerText: data.focus,
+        duration: 0.8,
+        snap: { innerText: 1 },
+        ease: 'power1.out',
+        onUpdate: function() {
+          focusPercentVal.innerHTML = Math.floor(focusPercentVal.innerText) + '%';
+        }
+      });
+    }
+
+    // Circular meter fill
+    if (circularMeterFill) {
+      // 2 * PI * r = 251.2
+      const offset = 251.2 - (251.2 * data.focus) / 100;
+      gsap.to(circularMeterFill, {
+        strokeDashoffset: offset,
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    }
+
+    if (studyHoursVal) {
+      const numHours = parseFloat(data.hours.replace(/[^\d.]/g, ''));
+      gsap.to(studyHoursVal, {
+        innerText: numHours,
+        duration: 0.8,
+        snap: { innerText: 0.1 },
+        ease: 'power1.out',
+        onUpdate: function() {
+          studyHoursVal.innerHTML = '+' + parseFloat(studyHoursVal.innerText).toFixed(1) + 'h';
+        }
+      });
+    }
+
+    if (distractionVal) {
+      const numDist = parseFloat(data.distraction.replace(/[^\d.]/g, ''));
+      gsap.to(distractionVal, {
+        innerText: numDist,
+        duration: 0.8,
+        snap: { innerText: 1 },
+        ease: 'power1.out',
+        onUpdate: function() {
+          distractionVal.innerHTML = '-' + Math.floor(distractionVal.innerText) + '%';
+        }
+      });
+    }
+
+    // Update acoustic slider value and fill
+    if (acousticVal && data.acoustic !== undefined) {
+      gsap.to(acousticVal, {
+        innerText: data.acoustic,
+        duration: 0.8,
+        snap: { innerText: 1 },
+        ease: 'power1.out',
+        onUpdate: function() {
+          acousticVal.innerHTML = Math.floor(acousticVal.innerText) + '%';
+        }
+      });
+    }
+    if (acousticFill && data.acoustic !== undefined) {
+      gsap.to(acousticFill, {
+        width: data.acoustic + '%',
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    }
+
+    // Update thermal slider value and fill
+    if (thermalVal && data.thermal !== undefined) {
+      thermalVal.textContent = data.thermal;
+    }
+    if (thermalFill && data.thermalFill !== undefined) {
+      gsap.to(thermalFill, {
+        width: data.thermalFill + '%',
+        duration: 0.8,
+        ease: 'power2.out'
+      });
+    }
+
+    // Update telemetry console scroll and active state
+    if (consoleLogs) {
+      const logEntries = consoleLogs.querySelectorAll('.log-entry');
+      logEntries.forEach((entry, i) => {
+        if (i === index) {
+          entry.classList.add('active');
+        } else {
+          entry.classList.remove('active');
+        }
+      });
+      consoleLogs.style.transform = `translateY(${-(index * 28)}px)`;
+    }
+
+    // 4. Morph SVG path
+    if (chartPath && chartPathFill) {
+      chartPath.setAttribute('d', data.chartPath);
+      chartPathFill.setAttribute('d', data.chartPathFill);
+    }
+
+    // 5. Update texts
+    if (chartStatusVal) chartStatusVal.textContent = data.status;
+    
+    if (dynamicQuoteText) {
+      gsap.to(dynamicQuoteText, {
+        opacity: 0,
+        y: -10,
+        duration: 0.25,
+        onComplete: () => {
+          dynamicQuoteText.textContent = data.quote;
+          gsap.to(dynamicQuoteText, { opacity: 1, y: 0, duration: 0.4 });
+        }
+      });
+    }
+  }
+
+  // 1. Smooth scroll scrub for the vertical timeline line fill (Apple & Sigma style)
+  if (progressFill && scenes.length > 0) {
+    gsap.fromTo(progressFill, 
+      { height: '0%' },
+      {
+        height: '100%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.why-choose-right-scroll',
+          start: 'top 55%',
+          end: 'bottom 45%',
+          scrub: true
+        }
+      }
+    );
+  }
+
+  // Hook ScrollTrigger instances to scenes
+  scenes.forEach((scene, index) => {
+    ScrollTrigger.create({
+      trigger: scene,
+      start: 'top 55%',
+      end: 'bottom 45%',
+      onEnter: () => {
+        scenes.forEach(s => s.classList.remove('active'));
+        scene.classList.add('active');
+        updateStickyBoard(index);
+      },
+      onEnterBack: () => {
+        scenes.forEach(s => s.classList.remove('active'));
+        scene.classList.add('active');
+        updateStickyBoard(index);
+      }
+    });
+  });
+
+  // Enable navigation click smooth scrolling fallback
+  progressSteps.forEach((step, index) => {
+    step.addEventListener('click', () => {
+      const targetScene = scenes[index];
+      if (targetScene) {
+        const topPos = targetScene.getBoundingClientRect().top + window.scrollY - 140;
+        window.scrollTo({
+          top: topPos,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // 3D Tilt Card Interaction Effect
+  const cards = document.querySelectorAll('.glass-content-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const xPercent = (x / rect.width - 0.5) * 15; // rotate degrees
+      const yPercent = (y / rect.height - 0.5) * -15;
+      
+      gsap.to(card, {
+        rotateY: xPercent,
+        rotateX: yPercent,
+        transformPerspective: 800,
+        ease: 'power2.out',
+        duration: 0.3
+      });
+
+      const glow = card.querySelector('.card-glow-reflection');
+      if (glow) {
+        gsap.to(glow, {
+          x: (x / rect.width - 0.5) * 40,
+          y: (y / rect.height - 0.5) * 40,
+          duration: 0.3
+        });
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        rotateY: 0,
+        rotateX: 0,
+        ease: 'power2.out',
+        duration: 0.6
+      });
+      
+      const glow = card.querySelector('.card-glow-reflection');
+      if (glow) {
+        gsap.to(glow, {
+          x: 0,
+          y: 0,
+          duration: 0.6
+        });
+      }
+    });
+  });
 }
+
